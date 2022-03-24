@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate, Link } from "react-router-dom";
 import { get } from "./modules/remote";
 import { CoinDataType } from "./types";
 import CoinInfo from "./components/table/CoinInfo";
