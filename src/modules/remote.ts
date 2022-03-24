@@ -1,5 +1,5 @@
 import instance from "./serverInstance";
-export const get = async (params: object = { vs_currency: "usd" }) => {
+export const get = async (params?: object) => {
   try {
     const res = await instance.get("coins/markets", { params });
     const data = res.data;
