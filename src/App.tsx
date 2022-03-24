@@ -15,7 +15,6 @@ function App() {
 
   React.useEffect(() => {
     get({ order: sort, page, per_page: 50 }).then((v) => {
-      console.log("v: ", v);
       setCoins(v);
     });
     // navigate(`/${page}`);
@@ -27,6 +26,11 @@ function App() {
 
   return (
     <div className="bg-gray-200/50 ">
+      <div className="h-44 justify-center flex items-center">
+        <h1 className="font-bold text-5xl text-center">
+          Cryptocurrency Tracker
+        </h1>
+      </div>
       <div className="flex flex-col items-center">
         <div className="w-full m-3 lg:w-4/5 p-3">
           <div className="flex space-x-3">
@@ -54,7 +58,7 @@ function App() {
           {page > 1 && (
             <Btn onClick={() => setPage((v) => v - 1)}>{page - 1}</Btn>
           )}
-          <div className="bg-white rounded-md disabled:opacity-70 shadow-md py-2 px-6">
+          <div className="bg-white rounded-md shadow-md py-2 px-6 font-bold opacity-50">
             {page}
           </div>
           {filterCoin?.length === 50 && (
@@ -74,7 +78,7 @@ const Btn: React.FC<JSX.IntrinsicElements["button"]> = (props) => {
   return (
     <button
       {...props}
-      className="bg-white rounded-md disabled:opacity-70 shadow-md py-2 px-6 text-xl"
+      className="bg-white rounded-md disabled:opacity-50 shadow-md py-2 px-6 text-xl font-bold"
     >
       {props.children}
     </button>
